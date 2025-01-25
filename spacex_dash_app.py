@@ -79,7 +79,6 @@ def get_pie_chart(entered_site):
                 Input(component_id='payload-slider',component_property='value')])
 def scatter(entered_site,payload):
     filtered_df = spacex_df[spacex_df['Payload Mass (kg)'].between(payload[0],payload[1])]
-    
     if entered_site=='ALL':
         fig=px.scatter(filtered_df,x='Payload Mass (kg)',y='Class',color='Booster Version Category',title='Landing Outcomes for All Sites Based On Payload Mass (kg)')
         return fig
